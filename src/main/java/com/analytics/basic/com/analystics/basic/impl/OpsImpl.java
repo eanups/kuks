@@ -9,6 +9,7 @@ import java.util.List;
  * Created by Anup on 4/1/2017.
  */
 public class OpsImpl implements Ops {
+
     public double summation(List<Double> xList) {
         double res = 0;
         for (Double val: xList) {

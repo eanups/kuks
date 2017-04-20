@@ -60,8 +60,12 @@ public class DataReader implements Reader {
 
     }
 
-    public void displayDataset() {
-        List<Double> displayList = dataSet.get("D4");
+    public List<Double> getDataColumn(String colName) {
+        return dataSet.get(colName);
+    }
+
+    public void displayDataColumn(String colName) {
+        List<Double> displayList = dataSet.get(colName);
         for (Double val: displayList) {
             System.out.println(val);
         }

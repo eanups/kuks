@@ -3,7 +3,7 @@ package com.analytics.basic;
 import java.util.List;
 
 /**
- * Created by 310194621 on 4/1/2017.
+ * Created by Anup on 4/1/2017.
  */
 public interface Ops {
 
