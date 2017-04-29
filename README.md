@@ -16,9 +16,8 @@ Data Collection:
 
 Assuming the incoming data is in a ‘.csv’ form, we read the incoming data into a reader instance through
 
-a class called Invoker where the DataReader function reads and the function displayDataset displays
+a class called Invoker where the DataReader function reads and the function displayDataset displays the data.
 
-the data.
 -------------------
 
 Summation of a variable list:
