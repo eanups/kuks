@@ -4,6 +4,7 @@ package com.analytics.basic;
 import java.util.List;
 
 /**
+ * Data Set Reader Interface
  * Created by Anup on 4/1/2017.
  */
 public interface Reader {
@@ -23,10 +24,5 @@ public interface Reader {
      */
     List<Double> getDataColumn(String colName);
 
-    /**
-     * Displays Array List corresponding to the column
-     *
-     * @param colName
-     */
-    void displayDataColumn(String colName);
+
 }

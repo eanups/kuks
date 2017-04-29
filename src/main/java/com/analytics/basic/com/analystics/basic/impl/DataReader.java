@@ -11,13 +11,12 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * Data Reader Class for CSV files
  * Created by Anup on 4/2/2017.
  */
 public class DataReader implements Reader {
 
     private Map<String, ArrayList<Double>> dataSet ;
-
-    private String header[];
 
     public DataReader() {
 
@@ -28,16 +27,16 @@ public class DataReader implements Reader {
     public void loadDataSet(String filePath) {
         FileReader fileReader = null;
         try {
-            // fileReader = new FileReader("housing_data.csv");
             fileReader = new FileReader(filePath);
 
             CSVReader reader = new CSVReader(fileReader, ',');
             String[] line ;
+            String[] header;
 
             // Read header
             header = reader.readNext();
-            for (int col = 0; col < header.length; col++) {
-                dataSet.put(header[col], new ArrayList<Double>(1000));
+            for (String aHeader : header) {
+                dataSet.put(aHeader, new ArrayList<Double>(1000));
             }
             while( (line = reader.readNext()) != null) {
                 for (int col = 0; col < line.length; col++) {
@@ -47,6 +46,7 @@ public class DataReader implements Reader {
                 }
             }
         } catch (java.io.IOException e) {
+            // TODO Use Logger and Throw Exception
             e.printStackTrace();
         }finally {
             if (fileReader != null ) {
@@ -64,12 +64,5 @@ public class DataReader implements Reader {
         return dataSet.get(colName);
     }
 
-    public void displayDataColumn(String colName) {
-        List<Double> displayList = dataSet.get(colName);
-        for (Double val: displayList) {
-            System.out.println(val);
-        }
-
-    }
 
 }
